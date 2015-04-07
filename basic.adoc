@@ -1,0 +1,68 @@
+= Gitの基本操作
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== リポジトリの作成。
+----
+$ git init https://github.com/organization/repository
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== リポジトリのコピーをローカルに作成。
+----
+$ git clone https://github.com/organization/repository.git
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ローカルリポジトリごとにユーザーを設定。
+----
+$ cd local_repository
+$ git config user.name "account"
+$ git config user.email "account@example.com"
+$ git config --list
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ファイルの状態を確認。
+----
+$ git statu
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ファイルをステージングエリアに移動。
+----
+$ git add filepattern
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 編集したファイルをローカルリポジトリにコミット。
+----
+$ git commit -m "commit message"
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== コミット履歴の閲覧。
+----
+$ git log
+----
+このコマンドは各コミットについて SHA-1 チェックサム・作者の名前とメールアドレス・コミット日時・コミットメッセージを一覧表示する。 +
+※チェックサムとは、データを送受信する際の信頼性を確認するための値。 +
+image:http://psy-phy.com/images/sp.png[] +
+git-scm.com/book/ja/v1/Git-の基本-コミット履歴の閲覧 (accessed April 7)
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ローカルリポジトリの変更内容をリモートリポジトリに反映。
+----
+$ git push origin master:master
+----
+push =　アップロード +
+origin = リモートのサーバ名（または、リモートサーバのURL） +
+master = デフォルトのブランチ名 （svnでのtrunkと同じ） +
+master:master = ローカルのmasterをリモートのmasterに反映させる
