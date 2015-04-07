@@ -1,0 +1,30 @@
+= WinMergeでdiffを確認
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== WinMergeをdifftoolに設定する。
+C:\Users\user\.gitconfig に下記のセクションを追加。
+----
+[merge]
+    tool = WinMerge
+[mergetool "WinMerge"]
+    path = C:/Program Files (x86)/WinMerge/WinMergeU.exe
+    cmd = \"C:/Program Files (x86)/WinMerge/WinMergeU.exe\" /m /r=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[diff]
+    tool = WinMerge
+    guitool = WinMerge
+[difftool "WinMerge"]
+    path = C:/Program Files (x86)/WinMerge/WinMergeU.exe
+	cmd = \"C:/Program Files (x86)/WinMerge/WinMergeU.exe\" -e -ub -dl \"Base\" -dr \"Mine\" \"$LOCAL\" \"$REMOTE\"
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 差分のあるファイルを一覧表示する。
+----
+$ git difftool -d
+----
+or
+----
+$ git difftool --dir-diff
+----
