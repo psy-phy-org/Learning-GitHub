@@ -1,0 +1,62 @@
+= ブランチの操作
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ブランチの一覧を表示
+----
+$ git branch -a
+----
+-a オプションを付けると、リモートブランチも含めたブランチの一覧を表示する。
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ブランチの作成
+----
+$ git branch branchname
+----
+----
+$ git checkout -b branchname
+----
+-b オプションをつけて、checkoutすると、ブランチが作成され checkout される。
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ブランチの切り替え
+----
+$ git checkout branchname
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ブランチ名の変更
+----
+$ git branch -m oldbranch newbranch
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ブランチのpush
+----
+$ git push origin branchname
+----
+新規作成したブランチをリモートリポジトリーに push するときは、「git push リモートブランチ名 ブランチ名」。
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ブランチの削除
+----
+$ git branch -d branchname
+----
+マージされていないコミットがあるブランチを強制的に削除するには、 -d オプションを付けて実行する。
+----
+$ git push origin :branchname
+----
+リモートリポジトリーのブランチを削除する。
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ブランチのマージ
+----
+$ git merge branchname
+----
+--no-ff オプションを付けると、fast-forwardなマージであってもマージコミットを作成する。
