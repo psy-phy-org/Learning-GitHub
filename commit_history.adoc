@@ -1,0 +1,177 @@
+= コミット履歴の操作
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== コミット履歴の閲覧。
+----
+$ git log
+----
+このコマンドは各コミットについて SHA-1 チェックサム・作者の名前とメールアドレス・コミット日時・コミットメッセージを一覧表示する。 +
+※チェックサムとは、データを送受信する際の信頼性を確認するための値。 +
+image:http://psy-phy.com/images/sp.png[] +
+git-scm.com/book/ja/v1/Git-の基本-コミット履歴の閲覧 (accessed April 7)
+
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== コミット履歴の閲覧（1行表示）。
+----
+$ git log --oneline
+----
+各コミットを1行で表示する。SHA-1 チェックサムは全体 (40文字) ではなく最初の数文字のみが表示される。
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== pushしたコミットの取り消し。
+直近3件のコミットを取り消したい場合。
+----
+$ git rebase -i HEAD~3
+----
+.result
+----
+pick df5b51e Update 3
+pick 63401e5 Update 2
+pick e7dfaee Update 1
+
+# Rebase 58c9197..e7dfaee onto 58c9197
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+----
+image:http://psy-phy.com/images/sp.png[] +
+
+. 取り消したいコミットを削除して保存する。
+. リモートリポジトリに push する。
+----
+$ git push
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+git-scm.com/book/ja/v1/Git-の基本-作業のやり直し (accessed April 7)
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== コミットメッセージの書き換え。
+直近3件を書き換えたい場合、
+----
+$ git rebase -i HEAD~3
+----
+.result
+----
+pick df5b51e Update 3
+pick 63401e5 Update 2
+pick e7dfaee Update 1
+
+# Rebase 58c9197..e7dfaee onto 58c9197
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+. 書き換えたいコミットを見つけてその行の pick の文字を edit に変更して保存・終了する。
+. --amend オプションを指定してメッセージを修正後コミットする。
+----
+$ git commit --amend
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+--continue オプションを指定して rebase を実行する。
+----
+$ git rebase --continue
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+リモートリポジトリに push する。
+----
+$ git push
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== コミットの巻き戻し。
+----
+$ git log
+----
+どこまで戻したいか log を確認する。
+
+image:http://psy-phy.com/images/sp.png[] +
+----
+$ git reset -—hard SHA-1チェックサム
+----
+* reset --hard：全て巻き戻す。
+* reset --mixed：commitとaddの取り消し。
+* reset --soft：commitのみ取り消し。
+
+SHA-1チェックサムは、git log に表示される d25f6e6e75dcc80594a45422c54c49cfbf3b4ad8 などの文字列。
+
+image:http://psy-phy.com/images/sp.png[] +
+----
+$ git push -f
+----
+リモートのコミットがローカルのコミットの祖先でない場合は リモートへの送信が拒否される。 これを無効にするには「-f」または「–force」オプションをつける。リモートリポジトリのコミットが失われる可能性がある。
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== Non-Fast-Forward Pushの解決。
+----
+$ git push
+Username for 'https://github.com': account
+Password for 'https://account@github.com':
+To https://github.com/account/repository.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/account/repository
+l.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+対応方法 1）git pull する。
+----
+$ git pull
+----
+自動的にマージされて push できる状態になることもある。
+
+image:http://psy-phy.com/images/sp.png[] +
+対応方法 2）fetch して merge する。
+----
+$ git fetch    （リモートの変更を取得して）
+$ git merge origin/master    （マージする）
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+対応方法 3）fetch して rebase する。
+----
+$ git fetch    （リモートの変更を取得して）
+$ git rebase origin/master
+----
