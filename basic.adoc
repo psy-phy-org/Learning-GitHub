@@ -1,48 +1,117 @@
 = Gitの基本操作
 
-image:http://psy-phy.com/images/sp.png[] +
-
-=== リポジトリの作成。
+=== ディレクトリの作成
 ----
-$ git init https://github.com/organization/repository
-----
-
-image:http://psy-phy.com/images/sp.png[] +
-
-=== リポジトリのコピーをローカルに作成。
-----
-$ git clone https://github.com/organization/repository.git
+$ cd parent_directory
+$ mkdir local_repository
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ローカルリポジトリごとにユーザーを設定。
+=== ローカルリポジトリの作成
 ----
 $ cd local_repository
-$ git config user.name "account"
-$ git config user.email "account@example.com"
+$ git init
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 共有リポジトリの登録
+----
+$ git remote add origin https://github.com/organization/repository.git
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ローカルリポジトリごとのユーザー名・メールアドレスの設定
+----
+$ cd local_repository
+$ git config [--global] user.name "account"
+$ git config [--global] user.email "account@example.com"
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 設定の確認
+----
 $ git config --list
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ファイルの状態を確認。
+=== 設定設定の削除
 ----
-$ git statu
-----
-
-image:http://psy-phy.com/images/sp.png[] +
-
-=== ファイルをステージングエリアに移動。
-----
-$ git add filepattern
+$ git config --unset 削除したい設定
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== 編集したファイルをローカルリポジトリにコミット。
+=== ファイルの状態を確認
+----
+$ git status
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 差分を確認（ステージング前）
+----
+$ git diff
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ファイルをステージングエリアに移動
+----
+$ git add filename
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ステージングするファイルを間違えた
+----
+$ git reset HEAD
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 複数ファイルをステージングしてしまって、特定のファイルだけ戻したい
+----
+$ reset HEAD filename
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== HEADと同じ状態に戻す
+----
+$ git checkout -- filename
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ファイルを管理対象から除外する
+----
+$ git rm --cached filename
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 差分を確認(ステージング後)
+----
+$ git diff --cached
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 編集したファイルをローカルリポジトリにコミット
 ----
 $ git commit -m "commit message"
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== ステージングにファイルがない場合のコミット
+----
+$ git commit --allow-empty -m "commit message"
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
@@ -60,9 +129,35 @@ image:http://psy-phy.com/images/sp.png[] +
 
 === ローカルリポジトリの変更内容をリモートリポジトリに反映。
 ----
-$ git push origin master:master
+$ git push [-u] origin master:master
 ----
-push =　アップロード +
+push = アップロード +
+[-u] = 次回から git push だけで origin master で push（オプション）
 origin = リモートのサーバ名（または、リモートサーバのURL） +
 master = デフォルトのブランチ名 （svnでのtrunkと同じ） +
 master:master = ローカルのmasterをリモートのmasterに反映させる
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== 間違えてpushしてしまった
+----
+$ git rebase -i HEAD~n
+----
+vimが開いて、HEADからHEAD~nまでのコミットが表示される
+取り消したいコミットを削除して保存
+強制オプションつきでpush
+----
+git push -f origin master
+----
+
+image:http://psy-phy.com/images/sp.png[] +
+
+=== vimの保存・終了方法
+----
+i 編集モード
+:wq 編集した内容を開いているファイルに保存して終了
+:q! 編集していても保存せずに強制終了
+[Esc] 各種モードの終了
+----
+
+image:http://psy-phy.com/images/sp.png[] +
