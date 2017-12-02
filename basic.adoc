@@ -1,5 +1,6 @@
 = Gitの基本操作
 
+
 === ディレクトリの作成
 ----
 $ cd parent_directory
@@ -39,7 +40,7 @@ $ git config --list
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== 設定設定の削除
+=== 設定の削除
 ----
 $ git config --unset 削除したい設定
 ----
@@ -60,7 +61,7 @@ $ git diff
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ファイルをステージングエリアに移動
+=== ファイルをステージング
 ----
 $ git add filename
 ----
@@ -132,7 +133,7 @@ image:http://psy-phy.com/images/sp.png[] +
 $ git push [-u] origin master:master
 ----
 push = アップロード +
-[-u] = 次回から git push だけで origin master で push（オプション）
+[-u] = 次回から git push だけで origin master で push（オプション） +
 origin = リモートのサーバ名（または、リモートサーバのURL） +
 master = デフォルトのブランチ名 （svnでのtrunkと同じ） +
 master:master = ローカルのmasterをリモートのmasterに反映させる
@@ -143,20 +144,20 @@ image:http://psy-phy.com/images/sp.png[] +
 ----
 $ git rebase -i HEAD~n
 ----
-vimが開いて、HEADからHEAD~nまでのコミットが表示される
-取り消したいコミットを削除して保存
-強制オプションつきでpush
+vscodの総合ターミナルの場合、vimが開いて、HEADからHEAD~nまでのコミットが表示される +
+取り消したいコミットを削除 +
+強制オプションつき保存 +
 ----
 git push -f origin master
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== vimの保存・終了方法
+=== vimの操作
 ----
-i 編集モード
-:wq 編集した内容を開いているファイルに保存して終了
-:q! 編集していても保存せずに強制終了
+i 編集モード<br>
+:wq 編集した内容を開いているファイルに保存して終了<br>
+:q! 編集していても保存せずに強制終了<br>
 [Esc] 各種モードの終了
 ----
 
