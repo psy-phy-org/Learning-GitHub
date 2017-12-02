@@ -144,7 +144,7 @@ image:http://psy-phy.com/images/sp.png[] +
 ----
 $ git rebase -i HEAD~n
 ----
-vscodeの総合ターミナルの場合、vimが開いて、HEADからHEAD~nまでのコミットが表示される +
+vscodeの総合ターミナルの場合、vimでHEADからHEAD~nまでのコミットが表示される +
 取り消したいコミットを削除 +
 強制オプションつき保存 +
 ----
