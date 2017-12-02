@@ -133,7 +133,7 @@ image:http://psy-phy.com/images/sp.png[] +
 $ git push [-u] origin master:master
 ----
 push = アップロード +
-[-u] = 次回から git push だけで origin master で push（オプション） +
+-u = 次回から git push だけで origin master で push（オプション） +
 origin = リモートのサーバ名（または、リモートサーバのURL） +
 master = デフォルトのブランチ名 （svnでのtrunkと同じ） +
 master:master = ローカルのmasterをリモートのmasterに反映させる
@@ -144,7 +144,7 @@ image:http://psy-phy.com/images/sp.png[] +
 ----
 $ git rebase -i HEAD~n
 ----
-vscodの総合ターミナルの場合、vimが開いて、HEADからHEAD~nまでのコミットが表示される +
+vscodeの総合ターミナルの場合、vimが開いて、HEADからHEAD~nまでのコミットが表示される +
 取り消したいコミットを削除 +
 強制オプションつき保存 +
 ----
@@ -155,9 +155,9 @@ image:http://psy-phy.com/images/sp.png[] +
 
 === vimの操作
 ----
-i 編集モード<br>
-:wq 編集した内容を開いているファイルに保存して終了<br>
-:q! 編集していても保存せずに強制終了<br>
+i 編集モード +
+:wq 編集した内容を開いているファイルに保存して終了 +
+:q! 編集していても保存せずに強制終了 +
 [Esc] 各種モードの終了
 ----
 
