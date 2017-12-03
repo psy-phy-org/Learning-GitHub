@@ -1,5 +1,6 @@
 = Gitの基本操作
 
+image:http://psy-phy.com/images/sp.png[] +
 
 === ディレクトリの作成
 ----
