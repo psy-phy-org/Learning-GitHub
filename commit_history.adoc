@@ -32,31 +32,13 @@ $ git rebase -i HEAD~3
 pick df5b51e Update 3
 pick 63401e5 Update 2
 pick e7dfaee Update 1
-
-# Rebase 58c9197..e7dfaee onto 58c9197
-#
-# Commands:
-#  p, pick = use commit
-#  r, reword = use commit, but edit the commit message
-#  e, edit = use commit, but stop for amending
-#  s, squash = use commit, but meld into previous commit
-#  f, fixup = like "squash", but discard this commit's log message
-#  x, exec = run command (the rest of the line) using shell
-#
-# These lines can be re-ordered; they are executed from top to bottom.
-#
-# If you remove a line here THAT COMMIT WILL BE LOST.
-#
-# However, if you remove everything, the rebase will be aborted.
-#
-# Note that empty commits are commented out
 ----
 image:http://psy-phy.com/images/sp.png[] +
 
 . 取り消したいコミットを削除して保存する。
-. リモートリポジトリに push する。
+. リモートリポジトリに強制オプション付きで push する。
 ----
-$ git push
+$ git push -f origin master
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
@@ -74,24 +56,6 @@ $ git rebase -i HEAD~3
 pick df5b51e Update 3
 pick 63401e5 Update 2
 pick e7dfaee Update 1
-
-# Rebase 58c9197..e7dfaee onto 58c9197
-#
-# Commands:
-#  p, pick = use commit
-#  r, reword = use commit, but edit the commit message
-#  e, edit = use commit, but stop for amending
-#  s, squash = use commit, but meld into previous commit
-#  f, fixup = like "squash", but discard this commit's log message
-#  x, exec = run command (the rest of the line) using shell
-#
-# These lines can be re-ordered; they are executed from top to bottom.
-#
-# If you remove a line here THAT COMMIT WILL BE LOST.
-#
-# However, if you remove everything, the rebase will be aborted.
-#
-# Note that empty commits are commented out
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
@@ -99,7 +63,7 @@ image:http://psy-phy.com/images/sp.png[] +
 . 書き換えたいコミットを見つけてその行の pick の文字を edit に変更して保存・終了する。
 . --amend オプションを指定してメッセージを修正後コミットする。
 ----
-$ git commit --amend
+$ git commit --amend -m "new message"
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
@@ -109,9 +73,9 @@ $ git rebase --continue
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
-リモートリポジトリに push する。
+.リモートリポジトリに強制オプション付きで push する。
 ----
-$ git push
+$ git push -f origin master
 ----
 
 image:http://psy-phy.com/images/sp.png[] +
