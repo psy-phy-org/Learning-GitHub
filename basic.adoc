@@ -115,6 +115,7 @@ image:http://psy-phy.com/images/sp.png[] +
 ----
 $ git commit --allow-empty -m "commit message"
 ----
+初回のコミットは git rebase -i できないので空にしておくと便利 +
 
 image:http://psy-phy.com/images/sp.png[] +
 
