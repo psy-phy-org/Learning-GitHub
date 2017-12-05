@@ -130,7 +130,7 @@ git-scm.com/book/ja/v1/Git-の基本-コミット履歴の閲覧 (accessed April
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ローカルリポジトリの変更内容をリモートリポジトリに反映。
+=== ローカルリポジトリの変更内容をリモートリポジトリに反映
 ----
 $ git push [-u] origin master:master
 ----
