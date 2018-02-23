@@ -1,62 +1,62 @@
-= ƒuƒ‰ƒ“ƒ`‚Ì‘€ì
+# ãƒ–ãƒ©ãƒ³ãƒã®æ“ä½œ
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ƒuƒ‰ƒ“ƒ`‚Ìˆê——‚ð•\Ž¦
-----
+## ãƒ–ãƒ©ãƒ³ãƒã®ä¸€è¦§ã‚’è¡¨ç¤º
+```bash
 $ git branch -a
-----
--a ƒIƒvƒVƒ‡ƒ“‚ð•t‚¯‚é‚ÆAƒŠƒ‚[ƒgƒuƒ‰ƒ“ƒ`‚àŠÜ‚ß‚½ƒuƒ‰ƒ“ƒ`‚Ìˆê——‚ð•\Ž¦‚·‚éB
+```
+-a ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ä»˜ã‘ã‚‹ã¨ã€ãƒªãƒ¢ãƒ¼ãƒˆãƒ–ãƒ©ãƒ³ãƒã‚‚å«ã‚ãŸãƒ–ãƒ©ãƒ³ãƒã®ä¸€è¦§ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ƒuƒ‰ƒ“ƒ`‚Ìì¬
-----
+## ãƒ–ãƒ©ãƒ³ãƒã®ä½œæˆ
+```bash
 $ git branch branchname
-----
-----
+```
+```bash
 $ git checkout -b branchname
-----
--b ƒIƒvƒVƒ‡ƒ“‚ð‚Â‚¯‚ÄAcheckout‚·‚é‚ÆAƒuƒ‰ƒ“ƒ`‚ªì¬‚³‚ê checkout ‚³‚ê‚éB
+```
+-b ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ã¤ã‘ã¦ã€checkoutã™ã‚‹ã¨ã€ãƒ–ãƒ©ãƒ³ãƒãŒä½œæˆã•ã‚Œ checkout ã•ã‚Œã‚‹ã€‚
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ƒuƒ‰ƒ“ƒ`‚ÌØ‚è‘Ö‚¦
-----
+## ãƒ–ãƒ©ãƒ³ãƒã®åˆ‡ã‚Šæ›¿ãˆ
+```bash
 $ git checkout branchname
-----
+```
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ƒuƒ‰ƒ“ƒ`–¼‚Ì•ÏX
-----
+## ãƒ–ãƒ©ãƒ³ãƒåã®å¤‰æ›´
+```bash
 $ git branch -m oldbranch newbranch
-----
+```
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ƒuƒ‰ƒ“ƒ`‚Ìpush
-----
+## ãƒ–ãƒ©ãƒ³ãƒã®push
+```bash
 $ git push origin branchname
-----
-V‹Kì¬‚µ‚½ƒuƒ‰ƒ“ƒ`‚ðƒŠƒ‚[ƒgƒŠƒ|ƒWƒgƒŠ[‚É push ‚·‚é‚Æ‚«‚ÍAugit push ƒŠƒ‚[ƒgƒuƒ‰ƒ“ƒ`–¼ ƒuƒ‰ƒ“ƒ`–¼vB
+```
+æ–°è¦ä½œæˆã—ãŸãƒ–ãƒ©ãƒ³ãƒã‚’ãƒªãƒ¢ãƒ¼ãƒˆãƒªãƒã‚¸ãƒˆãƒªãƒ¼ã« push ã™ã‚‹ã¨ãã¯ã€ã€Œgit push ãƒªãƒ¢ãƒ¼ãƒˆãƒ–ãƒ©ãƒ³ãƒå ãƒ–ãƒ©ãƒ³ãƒåã€ã€‚
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ƒuƒ‰ƒ“ƒ`‚Ìíœ
-----
+## ãƒ–ãƒ©ãƒ³ãƒã®å‰Šé™¤
+```bash
 $ git branch -d branchname
-----
-ƒ}[ƒW‚³‚ê‚Ä‚¢‚È‚¢ƒRƒ~ƒbƒg‚ª‚ ‚éƒuƒ‰ƒ“ƒ`‚ð‹­§“I‚Éíœ‚·‚é‚É‚ÍA -d ƒIƒvƒVƒ‡ƒ“‚ð•t‚¯‚ÄŽÀs‚·‚éB
-----
+```
+ãƒžãƒ¼ã‚¸ã•ã‚Œã¦ã„ãªã„ã‚³ãƒŸãƒƒãƒˆãŒã‚ã‚‹ãƒ–ãƒ©ãƒ³ãƒã‚’å¼·åˆ¶çš„ã«å‰Šé™¤ã™ã‚‹ã«ã¯ã€ -d ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ä»˜ã‘ã¦å®Ÿè¡Œã™ã‚‹ã€‚
+```bash
 $ git push origin :branchname
-----
-ƒŠƒ‚[ƒgƒŠƒ|ƒWƒgƒŠ[‚Ìƒuƒ‰ƒ“ƒ`‚ðíœ‚·‚éB
+```
+ãƒªãƒ¢ãƒ¼ãƒˆãƒªãƒã‚¸ãƒˆãƒªãƒ¼ã®ãƒ–ãƒ©ãƒ³ãƒã‚’å‰Šé™¤ã™ã‚‹ã€‚
 
 image:http://psy-phy.com/images/sp.png[] +
 
-=== ƒuƒ‰ƒ“ƒ`‚Ìƒ}[ƒW
-----
+## ãƒ–ãƒ©ãƒ³ãƒã®ãƒžãƒ¼ã‚¸
+```bash
 $ git merge branchname
-----
---no-ff ƒIƒvƒVƒ‡ƒ“‚ð•t‚¯‚é‚ÆAfast-forward‚Èƒ}[ƒW‚Å‚ ‚Á‚Ä‚àƒ}[ƒWƒRƒ~ƒbƒg‚ðì¬‚·‚éB
+```
+--no-ff ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ä»˜ã‘ã‚‹ã¨ã€fast-forwardãªãƒžãƒ¼ã‚¸ã§ã‚ã£ã¦ã‚‚ãƒžãƒ¼ã‚¸ã‚³ãƒŸãƒƒãƒˆã‚’ä½œæˆã™ã‚‹ã€‚
