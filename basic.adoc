@@ -1,6 +1,6 @@
 # Gitの基本操作
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ディレクトリの作成
 ```bash
@@ -8,7 +8,7 @@ $ cd parent_directory
 $ mkdir local_repository
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ローカルリポジトリの作成
 ```bash
@@ -16,14 +16,14 @@ $ cd local_repository
 $ git init
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 共有リポジトリの登録
 ```bash
 $ git remote add origin https://github.com/organization/repository.git
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ローカルリポジトリごとのユーザー名・メールアドレスの設定
 ```bash
@@ -32,84 +32,84 @@ $ git config [--global] user.name "account"
 $ git config [--global] user.email "account@example.com"
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 設定の確認
 ```bash
 $ git config --list
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 設定の削除
 ```bash
 $ git config --unset 削除したい設定
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ファイルの状態を確認
 ```bash
 $ git status
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 差分を確認（ステージング前）
 ```bash
 $ git diff
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ファイルをステージング
 ```bash
 $ git add filename
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ステージングするファイルを間違えた
 ```bash
 $ git reset HEAD
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 複数ファイルをステージングしてしまって、特定のファイルだけ戻したい
 ```bash
 $ reset HEAD filename
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## HEADと同じ状態に戻す
 ```bash
 $ git checkout -- filename
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ファイルを管理対象から除外する
 ```bash
 $ git rm --cached filename
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 差分を確認(ステージング後)
 ```bash
 $ git diff --cached
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 編集したファイルをローカルリポジトリにコミット
 ```bash
 $ git commit -m "commit message"
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ステージングにファイルがない場合のコミット
 ```bash
@@ -117,7 +117,7 @@ $ git commit --allow-empty -m "commit message"
 ```
 初回のコミットは git rebase -i できないので空にしておくと便利 +
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## コミット履歴の閲覧。
 ```bash
@@ -140,7 +140,7 @@ origin # リモートのサーバ名（または、リモートサーバのURL�
 master # デフォルトのブランチ名 （svnでのtrunkと同じ） +
 master:master # ローカルのmasterをリモートのmasterに反映させる
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 間違えてpushしてしまった
 ```bash
@@ -153,7 +153,7 @@ vscodeの総合ターミナルの場合、vimでHEADからHEAD~nまでのコミ�
 git push -f origin master
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## vimの操作
 ```bash
@@ -163,4 +163,4 @@ i 編集モード
 [Esc] 各種モードの終了
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
