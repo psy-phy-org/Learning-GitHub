@@ -1,6 +1,6 @@
 # ブランチの操作
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ブランチの一覧を表示
 ```bash
@@ -8,7 +8,7 @@ $ git branch -a
 ```
 -a オプションを付けると、リモートブランチも含めたブランチの一覧を表示する。
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ブランチの作成
 ```bash
@@ -19,21 +19,21 @@ $ git checkout -b branchname
 ```
 -b オプションをつけて、checkoutすると、ブランチが作成され checkout される。
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ブランチの切り替え
 ```bash
 $ git checkout branchname
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ブランチ名の変更
 ```bash
 $ git branch -m oldbranch newbranch
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ブランチのpush
 ```bash
@@ -41,7 +41,7 @@ $ git push origin branchname
 ```
 新規作成したブランチをリモートリポジトリーに push するときは、「git push リモートブランチ名 ブランチ名」。
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ブランチの削除
 ```bash
@@ -53,7 +53,7 @@ $ git push origin :branchname
 ```
 リモートリポジトリーのブランチを削除する。
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## ブランチのマージ
 ```bash
