@@ -1,6 +1,6 @@
 # WinMergeでdiffを確認
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## WinMergeをdifftoolに設定する。
 C:\Users\user\.gitconfig に下記のセクションを追加。
@@ -18,7 +18,7 @@ C:\Users\user\.gitconfig に下記のセクションを追加。
 	cmd # \"C:/Program Files (x86)/WinMerge/WinMergeU.exe\" -e -ub -dl \"Base\" -dr \"Mine\" \"$LOCAL\" \"$REMOTE\"
 ```
 
-image:http://psy-phy.com/images/sp.png[] +
+
 
 ## 差分のあるファイルを一覧表示する。
 ```bash
